@@ -6,6 +6,29 @@
     margin: 0;
     padding: 0;
 }
-ul, ol {
-    list-style: none;
+
+#checkoutMinimal {
+    ul, ol {
+        list-style: none;
+    }
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+/* REMOVE ALL ANIMATIONS, TRANSITIONS AND SMOOTH SCROLL FOR PEOPLE THAT PREFER NOT TO SEE THEM */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms;
+        animation-iteration-count: 1;
+        transition-duration: 0.01ms;
+        scroll-behavior: auto;
+    }
 }

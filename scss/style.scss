@@ -15,14 +15,14 @@
         justify-content: space-between;
         padding-block: 1rem;
         a {
-            font-size: 1.2rem;
             color: white;
             text-decoration: none;
             &:hover {
                 text-decoration: underline;
             }
             &.propertyName {
-                font-weight: $bold;
+                font-size: 1.25rem;
+                font-weight: $fw-bold;
                 &:hover {
                     text-decoration: none
                 }
@@ -32,13 +32,56 @@
     .checkoutMainContainer {
         @extend %container;
         padding-block: 1rem;
-        & > div {
+        
+        > div {
+            height: fit-content;
             border-radius: $border-radius-regular;
             overflow: hidden;
-            outline: 1pt solid $clr-gray-regular;
+            outline: 1pt solid $clr-gray-light;
+            .sectionTopBar {
+                padding: $padding-regular;
+                font-size: $fs-20;
+                background-color: $clr-gray-lighter;
+            }
+            section {
+                padding: $padding-big $padding-regular;
+                outline: 1pt solid $clr-gray-light;
+                .summaryInfoSmall {
+                    font-size: $fs-14;
+                    color: $clr-gray-regular
+                }
+                .summaryRow {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
         }
     }
-    .sectionTopBar {
-        background-color: $clr-gray-light;
+
+    #bookingSummary {
+        @extend %container;
+        position: fixed;
+        bottom: 0;
+        background: white;
+        .stayDates {
+            font-size: $fs-20;
+        }
+    }
+
+
+
+
+
+    @media (min-width: 50rem) {
+        .checkoutMainContainer {
+            display: grid;
+            grid-template-columns: 70% 1fr;
+            gap: 1rem
+        }
+        #bookingSummary {
+            position: sticky;
+            top: 0;
+        }
     }
 }
