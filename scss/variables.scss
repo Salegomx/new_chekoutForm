@@ -1,0 +1,19 @@
+/* SASS variables */
+
+/* fonts */
+$font: 'Inter', sans-serif;
+$bold: 700;
+
+/* colors */
+$clr-primary: #294342;
+
+$clr-gray-regular: #DCDCDC;
+$clr-gray-light: #F5F5F5;
+
+/* Shapes */
+$border-radius-regular: 5px;
+
+/* CSS variable */
+:root {
+    --clr-primary: #{$clr-primary};
+}

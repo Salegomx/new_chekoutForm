@@ -1,0 +1,44 @@
+@import './reset';
+@import './variables.scss';
+@import './utilities';
+
+@import './abstract/fonts/inter';
+
+#checkoutMinimal {
+    font-family: $font;
+    header {
+        background: var(--clr-primary);
+    }
+    .innerHeader {
+        @extend %container;
+        display: flex;
+        justify-content: space-between;
+        padding-block: 1rem;
+        a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+            &.propertyName {
+                font-weight: $bold;
+                &:hover {
+                    text-decoration: none
+                }
+            }
+        }
+    }
+    .checkoutMainContainer {
+        @extend %container;
+        padding-block: 1rem;
+        & > div {
+            border-radius: $border-radius-regular;
+            overflow: hidden;
+            outline: 1pt solid $clr-gray-regular;
+        }
+    }
+    .sectionTopBar {
+        background-color: $clr-gray-light;
+    }
+}
