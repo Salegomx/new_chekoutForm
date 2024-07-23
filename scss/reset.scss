@@ -16,6 +16,9 @@
         border: none;
         cursor: pointer;
     }
+    :where(img, svg, video, picture, figure, iframe, canvas) {
+        max-width: 100%;
+    }
 }
 
 /* REMOVE ALL ANIMATIONS, TRANSITIONS AND SMOOTH SCROLL FOR PEOPLE THAT PREFER NOT TO SEE THEM */
