@@ -35,7 +35,7 @@
 <BODY ID="checkoutMinimal">
     <HEADER>
         <DIV CLASS="innerHeader">
-            <A HREF="//hotel1493.openhotel.com" CLASS="propertyName">Las Vegas Hotel</A>
+            <A HREF="//hotel1493.openhotel.com" CLASS="propertyName"><H1>Las Vegas Hotel</H1></A>
             <A HREF="//hotel1493.openhotel.com/results.cfm">Back to rooms</A>
         </DIV>
     </HEADER>
@@ -73,11 +73,37 @@
                 <SECTION>
                     <DIV>
 
+                        <!--- ROOM INFO --->
+                        <!---H2 CLASS="sectionTitle">Your Rooms Selected</H2>
+
+                        <DIV CLASS="roomInfoContainer">
+                            <IMG SRC="//hotel1493.openhotel.com/images/content/_xlarge/1911x1390.jpg" ALT="A room" CLASS="roomPic">
+                            <DIV CLASS="roomInfo">
+                                <DIV CLASS="roomInfoTitle">
+                                    <SPAN CLASS="roomInfoName">2 King Nons-Smoking</SPAN>
+                                    <SPAN CLASS="roomInfoOccupancy">Max Occupancy: 3</SPAN>
+                                </DIV>
+                                <DIV CLASS="roomInfoDescription">
+                                    Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.
+                                    <br><br>
+                                    Versions of the Lorem ipsum text have been used in typesetting at least since the 1960s, when it was popularized by advertisements for Letraset transfer sheets.[1] Lorem ipsum was introduced to the digital world in the mid-1980s, when Aldus employed it in graphic and word-processing templates for its desktop publishing program PageMaker.
+                                    <br><br>
+                                    Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.
+                                    <br><br>
+                                    Versions of the Lorem ipsum text have been used in typesetting at least since the 1960s, when it was popularized by advertisements for Letraset transfer sheets.[1] Lorem ipsum was introduced to the digital world in the mid-1980s, when Aldus employed it in graphic and word-processing templates for its desktop publishing program PageMaker.
+                                    <br><br>
+                                    Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available. It is also used to temporarily replace text in a process called greeking, which allows designers to consider the form of a webpage or publication, without the meaning of the text influencing the design.
+                                    <br><br>
+                                    Versions of the Lorem ipsum text have been used in typesetting at least since the 1960s, when it was popularized by advertisements for Letraset transfer sheets.[1] Lorem ipsum was introduced to the digital world in the mid-1980s, when Aldus employed it in graphic and word-processing templates for its desktop publishing program PageMaker. 
+                                </DIV>
+                            </DIV>
+                        </DIV--->
+
                         <!--- CHECKOUT FORM --->
                         <FORM ID="checkoutForm">
                             <!--- GUEST INFO --->
                             <FIELDSET>
-                                <LEGEND>Your Information</LEGEND>
+                                <LEGEND><H2 CLASS="sectionTitle">Your Information</H2></LEGEND>
 
                                 <DIV CLASS="formRow">
                                     <LABEL FOR="firstName">
@@ -153,77 +179,78 @@
 
                             <!--- ROOM OPTIONS AND EXTRAS --->
                             <FIELDSET>
-                                <LEGEND>Add-Ons</LEGEND>
+                                <LEGEND><H2 CLASS="sectionTitle">Add-Ons</H2></LEGEND>
 
-                                <!--- EXTRAS --->
                                 <DIV CLASS="addonContainers">
-                                    <DIV CLASS="addonContainer">
-                                        <SPAN CLASS="addonTitle">Breakfast for Two</SPAN>
+                                    <!--- EXTRAS --->
+                                    <DIV CLASS="addonContainer extra hasPic">
+                                        <IMG CLASS="addonPic" SRC="//hotel1493.openhotel.com/images/content/_original/13654693.jpg" ALT="A delicious breakfast for two">
+                                        
                                         <DIV CLASS="addonDetails">
+                                            <SPAN CLASS="addonTitle">Breakfast for Two</SPAN>
                                             <DIV CLASS="addonPrice">
-                                                <SPAN CLASS="addonPriceAmount">$30</SPAN> <SPAN CLASS="addonInfoSmall">+ Tax</SPAN>
+                                                <SPAN CLASS="addonPriceAmount">$30 <SPAN CLASS="addonInfoSmall">+ Tax</SPAN></SPAN>
+                        
+                                                <!--- COUNTER AND CONTROLS --->
+                                                <DIV CLASS="addonInput controlsContainer">
+                                                    <BUTTON CLASS="addonControl addonLess">-</BUTTON>
+                                                    <LABEL FOR="breakfast">
+                                                        <INPUT ID="breakfast" NAME="breakfast" CLASS="addonNumberInput" TYPE="number" VALUE="0">  
+                                                    </LABEL>
+                                                    <BUTTON CLASS="addonControl addonPlus">+</BUTTON>
+                                                </DIV>
                                             </DIV>
-
-                                            <!--- COUNTER AND CONTROLS --->
-                                            <DIV CLASS="addonInput controlsContainer">
-                                                <DIV CLASS="addonControl addonLess">-</DIV>
-                                                <LABEL FOR="breakfast">
-                                                    <INPUT ID="breakfast" NAME="breakfast" CLASS="addonNumber" TYPE="number">  
-                                                </LABEL>
-                                                <DIV CLASS="addonControl addonPlus">+</DIV>
-                                            </DIV>
-                                            
                                         </DIV>
                                     </DIV>
 
-                                    <DIV CLASS="addonContainer">
-                                        <SPAN CLASS="addonTitle">Flowers</SPAN>
+                                    <DIV CLASS="addonContainer extra">
                                         <DIV CLASS="addonDetails">
+                                            <SPAN CLASS="addonTitle">Flowers</SPAN>
                                             <DIV CLASS="addonPrice">
-                                                <SPAN CLASS="addonPriceAmount">$20</SPAN> <SPAN CLASS="addonInfoSmall">+ Tax</SPAN>
-                                            </DIV>
+                                                <SPAN CLASS="addonPriceAmount">$20 <SPAN CLASS="addonInfoSmall">+ Tax</SPAN></SPAN>
 
-                                            <!--- COUNTER AND CONTROLS --->
-                                            <DIV CLASS="addonInput controlsContainer">
-                                                <DIV CLASS="addonControl addonLess">-</DIV>
-                                                <LABEL FOR="flowers">
-                                                    <INPUT ID="flowers" NAME="flowers" CLASS="addonNumber" TYPE="number">  
-                                                </LABEL>
-                                                <DIV CLASS="addonControl addonPlus">+</DIV>
+                                                <!--- COUNTER AND CONTROLS --->
+                                                <DIV CLASS="addonInput controlsContainer">
+                                                    <BUTTON CLASS="addonControl addonLess">-</BUTTON>
+                                                    <LABEL FOR="flowers">
+                                                        <INPUT ID="flowers" NAME="flowers" CLASS="addonNumberInput" TYPE="number" VALUE="0">  
+                                                    </LABEL>
+                                                    <BUTTON CLASS="addonControl addonPlus">+</BUTTON>
+                                                </DIV>
                                             </DIV>
-
                                         </DIV>
                                     </DIV>
 
                                     <!--- ROOM OPTIONS --->
-                                    <DIV CLASS="addonContainer">
-                                        <SPAN CLASS="addonTitle">Pet Fee - 1 Pet</SPAN>
+                                    <DIV CLASS="addonContainer option">
                                         <DIV CLASS="addonDetails">
+                                            <SPAN CLASS="addonTitle">Pet Fee - 1 Pet</SPAN>
                                             <DIV CLASS="addonPrice">
-                                                <SPAN CLASS="addonPriceAmount">$25</SPAN> <SPAN CLASS="addonInfoSmall">+ Tax</SPAN>
-                                            </DIV>
-                                            <DIV CLASS="addonInput">
-                                                <!--- COUNTER --->
-                                                <LABEL FOR="petFee1">
-                                                    <SPAN CLASS="addonbtn unchecked">Add</SPAN>
-                                                    <INPUT ID="petFee1" NAME="petFee1" TYPE="checkbox">
-                                                </LABEL>
+                                                <SPAN CLASS="addonPriceAmount">$25 <SPAN CLASS="addonInfoSmall">+ Tax</SPAN></SPAN>
+                                            
+                                                <DIV CLASS="addonInput">
+                                                    <!--- COUNTER --->
+                                                    <LABEL FOR="petFee1">
+                                                        <BUTTON CLASS="addonbtn">Add</BUTTON>
+                                                        <INPUT ID="petFee1" NAME="petFee1" TYPE="checkbox">
+                                                    </LABEL>
+                                                </DIV>
                                             </DIV>
                                         </DIV>
                                     </DIV>
 
-                                    <DIV CLASS="addonContainer">
-                                        <SPAN CLASS="addonTitle">Pet Fee - 2 Pets</SPAN>
+                                    <DIV CLASS="addonContainer option">
                                         <DIV CLASS="addonDetails">
+                                            <SPAN CLASS="addonTitle">Pet Fee - 2 Pets</SPAN>
                                             <DIV CLASS="addonPrice">
-                                                <SPAN CLASS="addonPriceAmount">$50</SPAN> <SPAN CLASS="addonInfoSmall">+ Tax</SPAN>
-                                            </DIV>
-                                            <DIV CLASS="addonInput">
-                                                <!--- COUNTER --->
-                                                <LABEL FOR="petFee2">
-                                                    <SPAN CLASS="addonbtn">Add</SPAN>
-                                                    <INPUT ID="petFee2" NAME="petFee2" TYPE="checkbox">
-                                                </LABEL>
+                                                <SPAN CLASS="addonPriceAmount">$50 <SPAN CLASS="addonInfoSmall">+ Tax</SPAN></SPAN>
+                                                <DIV CLASS="addonInput">
+                                                    <!--- COUNTER --->
+                                                    <LABEL FOR="petFee2">
+                                                        <BUTTON CLASS="addonbtn">Add</BUTTON>
+                                                        <INPUT ID="petFee2" NAME="petFee2" TYPE="checkbox">
+                                                    </LABEL>
+                                                </DIV>
                                             </DIV>
                                         </DIV>
                                     </DIV>
@@ -287,7 +314,7 @@
 
                             <DIV CLASS="summaryRow">
                                 <DIV>
-                                    <SPAN>Pet Fee</SPAN> <BUTTON CLASS="deleteThis">X</BUTTON>
+                                    <SPAN>Pet Fee - 2 Pets</SPAN> <BUTTON CLASS="deleteThis">X</BUTTON>
                                 </DIV>
                                 <SPAN>$50.00</SPAN>
                             </DIV>

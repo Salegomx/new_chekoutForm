@@ -9,13 +9,13 @@
     font-family: $font !important;
     color: $clr-black !important;
     ul, ol {
-        list-style: none !important;
+        list-style: none;
     }
     button {
-        font-family: $font !important;
-        background: none !important;
-        border: none !important;
-        cursor: pointer !important;
+        font-family: $font;
+        background: none;
+        border: none;
+        cursor: pointer;
     }
     a, input, select, option {
         font-weight: unset;
@@ -31,6 +31,7 @@
     header {
         background: var(--clr-primary);
     }
+
     .innerHeader {
         @extend %container;
         display: flex;
@@ -52,6 +53,7 @@
             }
         }
     }
+
     .checkoutMainContainer {
         @extend %container;
         padding-block: 1rem;
@@ -120,7 +122,12 @@
                 }
             }
         }
-        
+
+        .sectionTitle {
+            margin-block: calc($formGap * 1.5);
+            font-size: $fs-22;
+            font-weight: normal;
+        }
         .roomInfoContainer {
             display: grid;
             grid-template-columns: 300px 1fr;
@@ -155,7 +162,7 @@
                 }
             }
             .roomPic {
-                width: 100%;
+                height: 100%;
                 aspect-ratio: 8/5;
                 object-fit: cover;
                 object-position: center;
@@ -173,7 +180,7 @@
                 background-color: $clr-gray-lighter;
             }
             section {
-                padding: $padding-big $padding-regular;
+                padding: $padding-big;
                 outline: 1pt solid $clr-gray-light;
             }
         }
@@ -217,7 +224,6 @@
                     top: 0;
                     right: -20px;
                     display: block;
-                    transition: $transition-time;
                 }
                 &.open .summaryArrow {
                     transform: rotate(-0.5turn);
@@ -261,11 +267,6 @@
         fieldset {
             border: none;
             padding: 0;
-            legend {
-                margin-block: 10px;
-                font-size: $fs-20;
-                font-weight: normal;
-            }
             :is(input, select, textarea) {
                 font-family: $font;
                 font-size: $fs-16;
@@ -291,26 +292,26 @@
                 min-height: 1.75rem;
                 max-height: 7.5rem;
             }
+        }
 
-            /* GUEST INFO */
-            .formRow {
-                display: flex;
-                justify-content: space-evenly;
-                flex-wrap: wrap;
-                gap: $formGap;
-                margin-block: $formGap;
-                > label {
-                    /* Keeps uniformity when the form adapts responsively */
-                    flex-grow: 1;
-                    flex-shrink: 1;
-                    flex-basis: 175px;
-                    > :is(input, select, textarea) {
-                        width: 100%;
-                        padding: $padding-small;
-                        background: $clr-white;
-                        border-radius: $border-radius-small;
-                        outline: 1pt solid $clr-gray-light;
-                    }
+        /* GUEST INFO */
+        .formRow {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: $formGap;
+            margin-block: $formGap;
+            > label {
+                /* Keeps uniformity when the form adapts responsively */
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 175px;
+                > :is(input, select, textarea) {
+                    width: 100%;
+                    padding: $padding-small;
+                    background: $clr-white;
+                    border-radius: $border-radius-small;
+                    outline: 1pt solid $clr-gray-light;
                 }
             }
         }
@@ -322,83 +323,112 @@
             justify-content: space-evenly;
             gap: $formGap;
             flex-wrap: wrap;
-        }
-        .addonContainer {
-            flex-grow: 1;
-            flex-shrink: 1;
-            flex-basis: 45%;
-            padding: $padding-regular;
-            outline: 1pt solid $clr-gray-light;
-            border-radius: $border-radius-small;
-            .addonTitle {
-                display: block;
-                margin-bottom: 0.5rem;
-                font-size: $fs-20;
-            }
-            .addonDetails {
-                display: flex;
-                justify-content: space-between;
-                .addonPriceAmount {
-                    font-size: $fs-18;
+            .addonContainer {
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 300px;
+                outline: 1pt solid $clr-gray-light;
+                border-radius: $border-radius-small;
+                overflow: hidden;
+                &.extra {
+                    padding-left: calc($formGap / 2);
+                    .addonDetails {
+                        padding-right: 1rem;
+                    }
                 }
-                .addonInfoSmall {
-                    font-size: $fs-14;
-                    color: $clr-gray-regular;
+                &.option {
+                    padding: calc($formGap / 2);
                 }
-                .controlsContainer {
+                &.hasPic {
+                    display: grid;
+                    grid-template-columns: 1fr 65%;
+                    gap: calc($formGap / 2);
+                    padding: 0;
+                    .addonPic {
+                        height: 100%;
+                        aspect-ratio: 4/3;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                .addonDetails {
                     display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: 115px;
-                    .addonControl {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 20px;
-                        height: 20px;
-                        font-size: $fs-22;
-                        color: var(--clr-primary);
-                        outline: 2pt solid var(--clr-primary);
-                        border-radius: $round;
-                        cursor: pointer;
-                    }
-                    label {
-                        width: 3rem;
-                    }
-                    .addonNumber {
-                        width: 100%;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    height: 100%;
+                    .addonTitle {
+                        display: block;
+                        margin-bottom: 0.5rem;
                         font-size: $fs-20;
+                    }
+                    .addonPrice {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                    }
+                    .addonPriceAmount {
+                        font-size: $fs-18;
+                    }
+                    .addonInfoSmall {
+                        font-size: $fs-14;
+                        color: $clr-gray-regular;
+                    }
+                    .controlsContainer {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 110px;
+                        .addonControl {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 20px;
+                            height: 20px;
+                            font-size: $fs-22;
+                            color: var(--clr-primary);
+                            outline: 2pt solid var(--clr-primary);
+                            border-radius: $round;
+                            cursor: pointer;
+                        }
+                        label {
+                            width: 2.5rem;
+                        }
+                        .addonNumberInput {
+                            width: 100%;
+                            padding-bottom: 0.25rem;
+                            font-size: $fs-20;
+                            text-align: center;
+                            border-bottom: 1pt solid $clr-gray-dark;
+                        }
+                    }
+                    input[type="checkbox"] {
+                        display: none !important;
+                    }
+                    .addonbtn {
+                        display: block;
+                        padding: calc($padding-small / 3) $padding-regular;
+                        min-width: 110px;
+                        font-size: $fs-16;
+                        font-weight: 400;
+                        color: var(--clr-primary);
                         text-align: center;
-                        border-bottom: 1pt solid $clr-gray-dark;
-                    }
+                        outline: 1pt solid var(--clr-primary);
+                        border-radius: $border-radius-small;
+                        background: none;
+                        cursor: pointer;
+                        &.checked {
+                            color: $clr-white;
+                            outline: none;
+                            background: var(--clr-primary);
+                        }
+                    }    
                 }
-                input[type="checkbox"] {
-                    display: none !important;
-                }
-                .addonbtn {
-                    display: block;
-                    padding: calc($padding-small / 3) $padding-regular;
-                    min-width: 100px;
-                    font-size: $fs-16;
-                    font-weight: 400;
-                    color: var(--clr-primary);
-                    text-align: center;
-                    outline: 1pt solid var(--clr-primary);
-                    border-radius: $border-radius-small;
-                    background: none;
-                    cursor: pointer;
-                    &.checked {
-                        color: $clr-white;
-                        outline: none;
-                        background: var(--clr-primary);
-                    }
-                }    
             }
         }
-
+        
         #submit {
             display: block;
-            margin-inline: auto;
+            margin: calc($formGap * 2) auto;
             min-width: 250px;
             font-size: $fs-16;
             &:disabled {
@@ -409,6 +439,7 @@
         }
     }
 
+    /* Desktop specific styles */
     @media (width >= $desktop) {
         .checkoutMainContainer {
             display: grid;
@@ -421,6 +452,7 @@
         }
     }
 
+    /* Mobile specific styles */
     @media (width <= $mobile) {
         .checkoutBody {
             margin-bottom: 240px;
