@@ -81,6 +81,7 @@
 
                         <!--- CHECKOUT FORM --->
                         <FORM ID="checkoutForm" ACTION="#" METHOD="post">
+                            <!--- GUEST INFO --->
                             <FIELDSET>
                                 <LEGEND>Your Information</LEGEND>
 
@@ -156,8 +157,74 @@
                                 
                             </FIELDSET>
 
+                            <!--- ROOM OPTIONS AND EXTRAS --->
                             <FIELDSET>
                                 <LEGEND>Add-Ons</LEGEND>
+
+                                <!--- EXTRAS --->
+                                <DIV CLASS="addonContainers">
+                                    <DIV CLASS="addonContainer">
+                                        <SPAN CLASS="addonTitle">Breakfast for Two</SPAN>
+                                        <DIV CLASS="addonDetails">
+                                            <DIV CLASS="addonPrice">
+                                                <SPAN CLASS="addonPriceAmount">$30</SPAN> <SPAN CLASS="addonInfoSmall">+ Tax</SPAN>
+                                            </DIV>
+                                            <DIV CLASS="addonInput">
+                                                <!--- COUNTER --->
+                                                <LABEL FOR="thisAddon">
+                                                    <INPUT ID="thisAddon" NAME="thisAddon" TYPE="number">
+                                                </LABEL>
+                                            </DIV>
+                                        </DIV>
+                                    </DIV>
+
+                                    <DIV CLASS="addonContainer">
+                                        <SPAN CLASS="addonTitle">Flowers</SPAN>
+                                        <DIV CLASS="addonDetails">
+                                            <DIV CLASS="addonPrice">
+                                                <SPAN CLASS="addonPriceAmount">$20</SPAN> <SPAN CLASS="addonInfoSmall">+ Tax</SPAN>
+                                            </DIV>
+                                            <DIV CLASS="addonInput">
+                                                <!--- COUNTER --->
+                                                <LABEL FOR="thisAddon">
+                                                    <INPUT ID="thisAddon" NAME="thisAddon" TYPE="number">
+                                                </LABEL>
+                                            </DIV>
+                                        </DIV>
+                                    </DIV>
+
+                                    <!--- ROOM OPTIONS --->
+                                    <DIV CLASS="addonContainer">
+                                        <SPAN CLASS="addonTitle">Pet Fee - 1 Pet</SPAN>
+                                        <DIV CLASS="addonDetails">
+                                            <DIV CLASS="addonPrice">
+                                                <SPAN CLASS="addonPriceAmount">$25</SPAN> <SPAN CLASS="addonInfoSmall">+ Tax</SPAN>
+                                            </DIV>
+                                            <DIV CLASS="addonInput">
+                                                <!--- COUNTER --->
+                                                <LABEL FOR="thisAddon">
+                                                    <INPUT ID="thisAddon" NAME="thisAddon" TYPE="check">
+                                                </LABEL>
+                                            </DIV>
+                                        </DIV>
+                                    </DIV>
+
+                                    <DIV CLASS="addonContainer">
+                                        <SPAN CLASS="addonTitle">Pet Fee - 2 Pets</SPAN>
+                                        <DIV CLASS="addonDetails">
+                                            <DIV CLASS="addonPrice">
+                                                <SPAN CLASS="addonPriceAmount">$50</SPAN> <SPAN CLASS="addonInfoSmall">+ Tax</SPAN>
+                                            </DIV>
+                                            <DIV CLASS="addonInput">
+                                                <!--- COUNTER --->
+                                                <LABEL FOR="thisAddon">
+                                                    <INPUT ID="thisAddon" NAME="thisAddon" TYPE="check">
+                                                </LABEL>
+                                            </DIV>
+                                        </DIV>
+                                    </DIV>
+                                </DIV>
+
                             </FIELDSET>
 
                             <INPUT ID="submit" CLASS="btn" TITLE="Please fill up the form in order to continue" TYPE="submit" VALUE="Continue" DISABLED>
@@ -187,7 +254,12 @@
 
                 <!--- PRICE DETAILS --->
                 <SECTION>
-                    <BUTTON ID="summaryDetailsButton">Details</BUTTON>
+                    <BUTTON ID="summaryDetailsButton">
+                        Details
+                        <SVG CLASS="summaryArrow" WIDTH="15px" HEIGHT="15px" VERSION="1.1" VIEWBOX="0 0 1200 1200" XMLNS="http://www.w3.org/2000/svg">
+                            <PATH d="m269.88 419.11c-8.0625 0.070312-15.754 3.3867-21.344 9.1953-5.5898 5.8047-8.6094 13.621-8.375 21.68 0.23438 8.0586 3.7031 15.68 9.6211 21.156l329.94 301.88c5.5352 5.0703 12.766 7.8828 20.273 7.8828s14.738-2.8125 20.273-7.8828l329.94-301.88c5.9258-5.4805 9.3906-13.113 9.6211-21.176 0.23047-8.0664-2.7969-15.883-8.4023-21.691-5.6016-5.8047-13.309-9.1094-21.375-9.1641z" fill-rule="evenodd"/>
+                        </SVG>
+                    </BUTTON>
 
                     <DIV CLASS="summaryDetails">
                         <DIV> <!--- Wrapper for height animation --->
