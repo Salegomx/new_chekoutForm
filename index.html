@@ -13,19 +13,14 @@
     <LINK HREF="//openhotel.com/templates/general/js/tooltip/styles.css" REL="stylesheet" TYPE="text/css">
     <LINK HREF="//openhotel.com/templates/general/js/prompt/styles.css" REL="stylesheet" TYPE="text/css">
     <LINK HREF="//openhotel.com/templates/general/js/select/styles.css" REL="stylesheet" TYPE="text/css">
-
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/start.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/core/main.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/utilities/main.js"></SCRIPT>
-
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/jqueryui/main.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/core/ui.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/lightbox/main.js"></SCRIPT>
-
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/tooltip/main.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/prompt/main.js"></SCRIPT>
-
-    
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/ajaxform/main.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/ajaxreport/main.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/clock/main.js"></SCRIPT>
@@ -34,7 +29,6 @@
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/core/history.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/tooltip/tippy.js"></SCRIPT>
     <SCRIPT SRC="//openhotel.com/templates/general/js/migrate.js"></SCRIPT>
-
 
     <SCRIPT SRC="/assets/js/checkoutMinimal.js" DEFER></SCRIPT>
 </HEAD>
@@ -48,9 +42,9 @@
     <MAIN ID="checkoutMain">
         <DIV CLASS="checkoutMainContainer">
 
-            <!------------>
-            <!--- BODY --->
-            <!------------>
+            <!--------------------->
+            <!--- CHECKOUT BODY --->
+            <!--------------------->
 
             <DIV CLASS="checkoutBody">
 
@@ -80,7 +74,7 @@
                     <DIV>
 
                         <!--- CHECKOUT FORM --->
-                        <FORM ID="checkoutForm" ACTION="#" METHOD="post">
+                        <FORM ID="checkoutForm">
                             <!--- GUEST INFO --->
                             <FIELDSET>
                                 <LEGEND>Your Information</LEGEND>
@@ -169,12 +163,16 @@
                                             <DIV CLASS="addonPrice">
                                                 <SPAN CLASS="addonPriceAmount">$30</SPAN> <SPAN CLASS="addonInfoSmall">+ Tax</SPAN>
                                             </DIV>
-                                            <DIV CLASS="addonInput">
-                                                <!--- COUNTER --->
-                                                <LABEL FOR="thisAddon">
-                                                    <INPUT ID="thisAddon" NAME="thisAddon" TYPE="number">
+
+                                            <!--- COUNTER AND CONTROLS --->
+                                            <DIV CLASS="addonInput controlsContainer">
+                                                <DIV CLASS="addonControl addonLess">-</DIV>
+                                                <LABEL FOR="breakfast">
+                                                    <INPUT ID="breakfast" NAME="breakfast" CLASS="addonNumber" TYPE="number">  
                                                 </LABEL>
+                                                <DIV CLASS="addonControl addonPlus">+</DIV>
                                             </DIV>
+                                            
                                         </DIV>
                                     </DIV>
 
@@ -184,12 +182,16 @@
                                             <DIV CLASS="addonPrice">
                                                 <SPAN CLASS="addonPriceAmount">$20</SPAN> <SPAN CLASS="addonInfoSmall">+ Tax</SPAN>
                                             </DIV>
-                                            <DIV CLASS="addonInput">
-                                                <!--- COUNTER --->
-                                                <LABEL FOR="thisAddon">
-                                                    <INPUT ID="thisAddon" NAME="thisAddon" TYPE="number">
+
+                                            <!--- COUNTER AND CONTROLS --->
+                                            <DIV CLASS="addonInput controlsContainer">
+                                                <DIV CLASS="addonControl addonLess">-</DIV>
+                                                <LABEL FOR="flowers">
+                                                    <INPUT ID="flowers" NAME="flowers" CLASS="addonNumber" TYPE="number">  
                                                 </LABEL>
+                                                <DIV CLASS="addonControl addonPlus">+</DIV>
                                             </DIV>
+
                                         </DIV>
                                     </DIV>
 
@@ -202,8 +204,9 @@
                                             </DIV>
                                             <DIV CLASS="addonInput">
                                                 <!--- COUNTER --->
-                                                <LABEL FOR="thisAddon">
-                                                    <INPUT ID="thisAddon" NAME="thisAddon" TYPE="check">
+                                                <LABEL FOR="petFee1">
+                                                    <SPAN CLASS="addonbtn unchecked">Add</SPAN>
+                                                    <INPUT ID="petFee1" NAME="petFee1" TYPE="checkbox">
                                                 </LABEL>
                                             </DIV>
                                         </DIV>
@@ -217,8 +220,9 @@
                                             </DIV>
                                             <DIV CLASS="addonInput">
                                                 <!--- COUNTER --->
-                                                <LABEL FOR="thisAddon">
-                                                    <INPUT ID="thisAddon" NAME="thisAddon" TYPE="check">
+                                                <LABEL FOR="petFee2">
+                                                    <SPAN CLASS="addonbtn">Add</SPAN>
+                                                    <INPUT ID="petFee2" NAME="petFee2" TYPE="checkbox">
                                                 </LABEL>
                                             </DIV>
                                         </DIV>
@@ -233,9 +237,9 @@
                 </SECTION>
             </DIV>
 
-            <!--------------->
-            <!--- SUMMARY --->
-            <!--------------->
+            <!----------------------->
+            <!--- BOOKING SUMMARY --->
+            <!----------------------->
 
             <DIV ID="bookingSummary">
                 <DIV CLASS="sectionTopBar">
@@ -252,7 +256,7 @@
                     </DIV>
                 </SECTION>
 
-                <!--- PRICE DETAILS --->
+                <!--- DETAILS --->
                 <SECTION>
                     <BUTTON ID="summaryDetailsButton">
                         Details

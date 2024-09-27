@@ -266,6 +266,33 @@
                 font-size: $fs-20;
                 font-weight: normal;
             }
+            :is(input, select, textarea) {
+                font-family: $font;
+                font-size: $fs-16;
+                font-weight: normal;
+                color: $clr-gray-dark;
+                border: none;
+            }
+            /* Chrome, Safari, Edge, Opera */
+            input[type="number"]::-webkit-outer-spin-button,
+            input[type="number"]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            /* Firefox */
+            input[type="number"] {
+                -moz-appearance: textfield;
+            }
+            input[type="checkbox"]:checked {
+                accent-color: var(--clr-primary);
+            }
+            textarea {
+                resize: vertical;
+                min-height: 1.75rem;
+                max-height: 7.5rem;
+            }
+
+            /* GUEST INFO */
             .formRow {
                 display: flex;
                 justify-content: space-evenly;
@@ -276,33 +303,13 @@
                     /* Keeps uniformity when the form adapts responsively */
                     flex-grow: 1;
                     flex-shrink: 1;
-                    flex-basis: 175px; /* Set a uniform initial size */
-                    min-width: 0; /* Ensure proper shrinking */
+                    flex-basis: 175px;
                     > :is(input, select, textarea) {
                         width: 100%;
                         padding: $padding-small;
-                        font-family: $font;
-                        font-size: $fs-16;
-                        font-weight: normal;
                         background: $clr-white;
                         border-radius: $border-radius-small;
-                        border: none;
                         outline: 1pt solid $clr-gray-light;
-                    }
-                    /* Chrome, Safari, Edge, Opera */
-                    input[type="number"]::-webkit-outer-spin-button,
-                    input[type="number"]::-webkit-inner-spin-button {
-                        -webkit-appearance: none;
-                        margin: 0;
-                    }
-                    /* Firefox */
-                    input[type="number"] {
-                        -moz-appearance: textfield;
-                    }
-                    textarea {
-                        resize: vertical;
-                        min-height: 1.5rem;
-                        max-height: 7.5rem;
                     }
                 }
             }
@@ -316,13 +323,10 @@
             gap: $formGap;
             flex-wrap: wrap;
         }
-
         .addonContainer {
             flex-grow: 1;
             flex-shrink: 1;
             flex-basis: 45%;
-
-
             padding: $padding-regular;
             outline: 1pt solid $clr-gray-light;
             border-radius: $border-radius-small;
@@ -341,6 +345,54 @@
                     font-size: $fs-14;
                     color: $clr-gray-regular;
                 }
+                .controlsContainer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 115px;
+                    .addonControl {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 20px;
+                        height: 20px;
+                        font-size: $fs-22;
+                        color: var(--clr-primary);
+                        outline: 2pt solid var(--clr-primary);
+                        border-radius: $round;
+                        cursor: pointer;
+                    }
+                    label {
+                        width: 3rem;
+                    }
+                    .addonNumber {
+                        width: 100%;
+                        font-size: $fs-20;
+                        text-align: center;
+                        border-bottom: 1pt solid $clr-gray-dark;
+                    }
+                }
+                input[type="checkbox"] {
+                    display: none !important;
+                }
+                .addonbtn {
+                    display: block;
+                    padding: calc($padding-small / 3) $padding-regular;
+                    min-width: 100px;
+                    font-size: $fs-16;
+                    font-weight: 400;
+                    color: var(--clr-primary);
+                    text-align: center;
+                    outline: 1pt solid var(--clr-primary);
+                    border-radius: $border-radius-small;
+                    background: none;
+                    cursor: pointer;
+                    &.checked {
+                        color: $clr-white;
+                        outline: none;
+                        background: var(--clr-primary);
+                    }
+                }    
             }
         }
 
