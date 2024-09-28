@@ -51,22 +51,18 @@
                 <!--- Progress Bar --->
                 <DIV CLASS="checkoutProgress sectionTopBar">
                     <DIV CLASS="step completed">
-                        <DIV></DIV>
-                        <SPAN CLASS="desktopOnly">Select</SPAN>
+                        <DIV CLASS="circle"></DIV>
+                        <SPAN>Select</SPAN>
                     </DIV>
 
-                    <SPAN CLASS="arrow completed"></SPAN>
-
                     <DIV CLASS="step">
-                        <DIV></DIV>
-                        <SPAN CLASS="desktopOnly">Contact</SPAN>
+                        <DIV CLASS="circle"></DIV>
+                        <SPAN>Contact</SPAN>
                     </DIV>
 
-                    <SPAN CLASS="arrow"></SPAN>
-
                     <DIV CLASS="step">
-                        <DIV></DIV>
-                        <SPAN CLASS="desktopOnly">Reserve</SPAN>
+                        <DIV CLASS="circle"></DIV>
+                        <SPAN>Reserve</SPAN>
                     </DIV>
                 </DIV>
 
@@ -74,7 +70,7 @@
                     <DIV>
 
                         <!--- ROOM INFO --->
-                        <!---H2 CLASS="sectionTitle">Your Rooms Selected</H2>
+                        <H2 CLASS="sectionTitle">Your Rooms Selected</H2>
 
                         <DIV CLASS="roomInfoContainer">
                             <IMG SRC="//hotel1493.openhotel.com/images/content/_xlarge/1911x1390.jpg" ALT="A room" CLASS="roomPic">
@@ -97,46 +93,46 @@
                                     Versions of the Lorem ipsum text have been used in typesetting at least since the 1960s, when it was popularized by advertisements for Letraset transfer sheets.[1] Lorem ipsum was introduced to the digital world in the mid-1980s, when Aldus employed it in graphic and word-processing templates for its desktop publishing program PageMaker. 
                                 </DIV>
                             </DIV>
-                        </DIV--->
+                        </DIV>
 
                         <!--- CHECKOUT FORM --->
                         <FORM ID="checkoutForm">
                             <!--- GUEST INFO --->
-                            <FIELDSET>
+                            <FIELDSET CLASS="guestInfo">
                                 <LEGEND><H2 CLASS="sectionTitle">Your Information</H2></LEGEND>
 
                                 <DIV CLASS="formRow">
                                     <LABEL FOR="firstName">
-                                        <SPAN CLASS="sr-only">First Name</SPAN>
+                                        <SPAN CLASS="sr-only labelText">First Name:</SPAN>
                                         <INPUT ID="firstName" NAME="firstName" TYPE="text" PLACEHOLDER="First Name">
                                     </LABEL>
     
                                     <LABEL FOR="lastName">
-                                        <SPAN CLASS="sr-only">Last Name</SPAN>
+                                        <SPAN CLASS="sr-only labelText">Last Name:</SPAN>
                                         <INPUT ID="lastName" NAME="lastName" TYPE="text" PLACEHOLDER="Last Name">
                                     </LABEL>
     
                                     <LABEL FOR="email">
-                                        <SPAN CLASS="sr-only">Email</SPAN>
+                                        <SPAN CLASS="sr-only labelText">Email:</SPAN>
                                         <INPUT ID="email" NAME="email" TYPE="email" PLACEHOLDER="Email">
                                     </LABEL>
                                 </DIV>
 
                                 <DIV class="formRow">
                                     <LABEL FOR="address">
-                                        <SPAN CLASS="sr-only">Address</SPAN>
+                                        <SPAN CLASS="sr-only labelText">Address:</SPAN>
                                         <INPUT ID="address" NAME="address" TYPE="text" PLACEHOLDER="Address">
                                     </LABEL>
                                 </DIV>
 
                                 <DIV class="formRow">
                                     <LABEL FOR="city">
-                                        <SPAN CLASS="sr-only">City</SPAN>
+                                        <SPAN CLASS="sr-only labelText">City:</SPAN>
                                         <INPUT ID="city" NAME="city" TYPE="text" PLACEHOLDER="City">
                                     </LABEL>
     
                                     <LABEL FOR="state">
-                                        <SPAN CLASS="sr-only">State</SPAN>
+                                        <SPAN CLASS="sr-only labelText">State:</SPAN>
                                         <SELECT ID="state" NAME="state">
                                             <OPTION>California</OPTION>
                                             <OPTION>Nevada</OPTION>
@@ -146,14 +142,14 @@
                                     </LABEL>
     
                                     <LABEL FOR="zip">
-                                        <SPAN CLASS="sr-only">Zip Code</SPAN>
+                                        <SPAN CLASS="sr-only labelText">Zip Code:</SPAN>
                                         <INPUT ID="zip" NAME="zip" TYPE="number" PLACEHOLDER="ZIP">
                                     </LABEL>
                                 </DIV>
                                 
                                 <DIV class="formRow">
                                     <LABEL FOR="country">
-                                        <SPAN CLASS="sr-only">Country</SPAN>
+                                        <SPAN CLASS="sr-only labelText">Country:</SPAN>
                                         <SELECT ID="country" NAME="country">
                                             <OPTION>USA</OPTION>
                                             <OPTION>México</OPTION>
@@ -163,14 +159,14 @@
                                     </LABEL>
 
                                     <LABEL FOR="phone">
-                                        <SPAN CLASS="sr-only">Phone</SPAN>
+                                        <SPAN CLASS="sr-only labelText">Phone:</SPAN>
                                         <INPUT ID="phone" NAME="phone" TYPE="number" PLACEHOLDER="Phone">
                                     </LABEL>
                                 </DIV>
                                 
                                 <DIV class="formRow">
                                     <LABEL FOR="comments">
-                                        <SPAN CLASS="sr-only">Special Requests</SPAN>
+                                        <SPAN CLASS="sr-only labelText">Special Requests:</SPAN>
                                         <TEXTAREA ID="comments" NAME="comments" ROWS="3" PLACEHOLDER="Special Requests"></TEXTAREA>
                                     </LABEL>
                                 </DIV>
@@ -178,7 +174,7 @@
                             </FIELDSET>
 
                             <!--- ROOM OPTIONS AND EXTRAS --->
-                            <FIELDSET>
+                            <FIELDSET CLASS="addons">
                                 <LEGEND><H2 CLASS="sectionTitle">Add-Ons</H2></LEGEND>
 
                                 <DIV CLASS="addonContainers">
@@ -193,7 +189,7 @@
                         
                                                 <!--- COUNTER AND CONTROLS --->
                                                 <DIV CLASS="addonInput controlsContainer">
-                                                    <BUTTON CLASS="addonControl addonLess">-</BUTTON>
+                                                    <BUTTON CLASS="addonControl addonLess" DISABLED>-</BUTTON>
                                                     <LABEL FOR="breakfast">
                                                         <INPUT ID="breakfast" NAME="breakfast" CLASS="addonNumberInput" TYPE="number" VALUE="0">  
                                                     </LABEL>
@@ -211,7 +207,7 @@
 
                                                 <!--- COUNTER AND CONTROLS --->
                                                 <DIV CLASS="addonInput controlsContainer">
-                                                    <BUTTON CLASS="addonControl addonLess">-</BUTTON>
+                                                    <BUTTON CLASS="addonControl addonLess" DISABLED>-</BUTTON>
                                                     <LABEL FOR="flowers">
                                                         <INPUT ID="flowers" NAME="flowers" CLASS="addonNumberInput" TYPE="number" VALUE="0">  
                                                     </LABEL>

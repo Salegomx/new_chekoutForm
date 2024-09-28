@@ -1,7 +1,8 @@
 @import './reset';
-@import './variables.scss';
+@import './variables';
 @import './utilities';
 
+/* FONT */
 @import './abstract/fonts/inter';
 
 #checkoutMinimal {
@@ -26,6 +27,26 @@
     }
     :where(img, svg, video, picture, figure, iframe, canvas) {
         max-width: 100%;
+    }
+    /* Utility classes */
+    .sr-only {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border-width: 0 !important;
+    }
+    .btn {
+        padding: $padding-small $padding-big;
+        color: $clr-white;
+        background: var(--clr-primary);
+        border: none;
+        border-radius: $border-radius-small;
+        cursor: pointer;
     }
 
     header {
@@ -60,23 +81,24 @@
 
         /* Progress bar */
         .checkoutProgress {
+            position: relative;
             display: flex;
             justify-content: space-around;
             align-items: center;
             gap: $formGap;
 
             // Step counter (it's overriden by checkmarks when a step is completed)
-            & .step > div::before {
+            & .step .circle::before {
                 font-size: $fs-20;
                 color: var(--clr-primary);
             }
-            & .step:nth-of-type(1) > div::before {
+            & .step:nth-of-type(1) .circle::before {
                 content: '1';
             }
-            & .step:nth-of-type(2) > div::before {
+            & .step:nth-of-type(2) .circle::before {
                 content: '2';
             }
-            & .step:nth-of-type(3) > div::before {
+            & .step:nth-of-type(3) .circle::before {
                 content: '3';
             }
 
@@ -84,16 +106,17 @@
                 display: flex;
                 align-items: center;
                 gap: $formGap;
-                > div {
-                    border-radius: $round;
-                    aspect-ratio: 1;
-                    height: 25px;
-                    outline: 1pt solid var(--clr-primary);
+                .circle {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    aspect-ratio: 1;
+                    height: 25px;
+                    background-color: $clr-white;
+                    outline: 1px solid var(--clr-primary);
+                    border-radius: $round;
                 }
-                &.completed > div {
+                &.completed .circle {
                     color: $clr-white;
                     background-color: var(--clr-primary);
                     outline: none;
@@ -103,22 +126,32 @@
                     }
                 }
             }
-            .arrow {
-                position: relative;
-                width: 125px;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
                 height: 3px;
-                background-color: darken($clr-gray-light, 25%);
-                color: darken($clr-gray-light, 25%);
-                &:after {
-                    content: '➤';
-                    position: absolute;
-                    right: -10px;
-                    top: -13px;
-                    color: inherit; /* Graid out or colored if a step has been completed */
+                bottom: 0;
+                background: var(--clr-primary);
+            }
+            &::before {
+                width: 33%;
+                left: 0;
+            }
+            &::after {
+                width: 67%;
+                right: 0;
+                opacity: 0.25;
+            }
+            
+            &.finalize {
+                &::before {
+                    width: 66%;
+                    left: 0;
                 }
-                &.completed {
-                    background-color: var(--clr-primary);
-                    color: var(--clr-primary);
+                &::after {
+                    width: 34%;
                 }
             }
         }
@@ -175,7 +208,7 @@
             overflow: hidden;
             outline: 1pt solid $clr-gray-light;
             .sectionTopBar {
-                padding: $padding-regular;
+                padding: calc($padding-big * 0.75) $padding-regular;
                 font-size: $fs-20;
                 background-color: $clr-gray-lighter;
             }
@@ -267,12 +300,26 @@
         fieldset {
             border: none;
             padding: 0;
+            .labelText {
+                display: block;
+                margin-bottom: $padding-regular;
+                font-size: $fs-16;
+                font-weight: 400;
+                color: $clr-black;
+            }
             :is(input, select, textarea) {
                 font-family: $font;
                 font-size: $fs-16;
                 font-weight: normal;
                 color: $clr-gray-dark;
                 border: none;
+                &:read-only:not(select) {
+                    background: none !important;
+                    outline: none !important;
+                    padding-inline: 0 !important;
+                    border-radius: 0 !important;
+                    resize: none !important;
+                }
             }
             /* Chrome, Safari, Edge, Opera */
             input[type="number"]::-webkit-outer-spin-button,
@@ -295,6 +342,18 @@
         }
 
         /* GUEST INFO */
+        .formControls {
+            display: flex;
+            align-items: baseline;
+            gap: $formGap;
+            #editFormButton {
+                color: $clr-gray-regular;
+                border-bottom: 1pt solid $clr-gray-regular;
+                .pencilIcon {
+                    height: 10px;
+                }
+            }
+        }
         .formRow {
             display: flex;
             justify-content: space-evenly;
@@ -341,7 +400,7 @@
                 }
                 &.hasPic {
                     display: grid;
-                    grid-template-columns: 1fr 65%;
+                    grid-template-columns: 1fr 70%;
                     gap: calc($formGap / 2);
                     padding: 0;
                     .addonPic {
@@ -354,17 +413,18 @@
                 .addonDetails {
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-around;
+                    justify-content: space-evenly;
+                    gap: $formGap;
                     height: 100%;
+                    padding-block: $padding-small;
                     .addonTitle {
                         display: block;
-                        margin-bottom: 0.5rem;
                         font-size: $fs-20;
                     }
                     .addonPrice {
                         display: flex;
                         justify-content: space-between;
-                        align-items: baseline;
+                        align-items: center;
                     }
                     .addonPriceAmount {
                         font-size: $fs-18;
@@ -389,6 +449,12 @@
                             outline: 2pt solid var(--clr-primary);
                             border-radius: $round;
                             cursor: pointer;
+                            &:disabled {
+                                background: none;
+                                color: $clr-gray-light;
+                                outline: 2pt solid $clr-gray-light;
+                                cursor: auto;
+                            }
                         }
                         label {
                             width: 2.5rem;

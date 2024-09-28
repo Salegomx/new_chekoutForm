@@ -13,19 +13,14 @@
     <LINK HREF="//openhotel.com/templates/general/js/tooltip/styles.css" REL="stylesheet" TYPE="text/css">
     <LINK HREF="//openhotel.com/templates/general/js/prompt/styles.css" REL="stylesheet" TYPE="text/css">
     <LINK HREF="//openhotel.com/templates/general/js/select/styles.css" REL="stylesheet" TYPE="text/css">
-
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/start.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/core/main.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/utilities/main.js"></SCRIPT>
-
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/jqueryui/main.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/core/ui.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/lightbox/main.js"></SCRIPT>
-
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/tooltip/main.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/prompt/main.js"></SCRIPT>
-
-    
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/ajaxform/main.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/ajaxreport/main.js"></SCRIPT>
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/clock/main.js"></SCRIPT>
@@ -35,44 +30,39 @@
     <SCRIPT TYPE="text/javascript" SRC="//openhotel.com/templates/general/js/tooltip/tippy.js"></SCRIPT>
     <SCRIPT SRC="//openhotel.com/templates/general/js/migrate.js"></SCRIPT>
 
-
     <SCRIPT SRC="/assets/js/checkoutMinimal.js" DEFER></SCRIPT>
 </HEAD>
 <BODY ID="checkoutMinimal">
     <HEADER>
         <DIV CLASS="innerHeader">
-            <A HREF="//hotel1493.openhotel.com" CLASS="propertyName">Las Vegas Hotel</A>
+            <A HREF="//hotel1493.openhotel.com" CLASS="propertyName"><H1>Las Vegas Hotel</H1></A>
             <A HREF="//hotel1493.openhotel.com/results.cfm">Back to rooms</A>
         </DIV>
     </HEADER>
     <MAIN ID="checkoutMain">
         <DIV CLASS="checkoutMainContainer">
 
-            <!------------>
-            <!--- BODY --->
-            <!------------>
+            <!--------------------->
+            <!--- CHECKOUT BODY --->
+            <!--------------------->
 
             <DIV CLASS="checkoutBody">
 
                 <!--- Progress Bar --->
-                <DIV CLASS="checkoutProgress sectionTopBar">
+                <DIV CLASS="checkoutProgress sectionTopBar finalize">
                     <DIV CLASS="step completed">
-                        <DIV></DIV>
-                        <SPAN CLASS="desktopOnly">Select</SPAN>
+                        <DIV CLASS="circle"></DIV>
+                        <SPAN>Select</SPAN>
                     </DIV>
 
-                    <SPAN CLASS="arrow completed"></SPAN>
-
                     <DIV CLASS="step completed">
-                        <DIV></DIV>
-                        <SPAN CLASS="desktopOnly">Contact</SPAN>
+                        <DIV CLASS="circle"></DIV>
+                        <SPAN>Contact</SPAN>
                     </DIV>
-
-                    <SPAN CLASS="arrow completed"></SPAN>
 
                     <DIV CLASS="step">
-                        <DIV></DIV>
-                        <SPAN CLASS="desktopOnly">Reserve</SPAN>
+                        <DIV CLASS="circle"></DIV>
+                        <SPAN>Reserve</SPAN>
                     </DIV>
                 </DIV>
 
@@ -80,7 +70,7 @@
                     <DIV>
 
                         <!--- ROOM INFO --->
-                        <H2>Your Rooms Selected</H2>
+                        <H2 CLASS="sectionTitle">Your Rooms Selected</H2>
 
                         <DIV CLASS="roomInfoContainer">
                             <IMG SRC="//hotel1493.openhotel.com/images/content/_xlarge/1911x1390.jpg" ALT="A room" CLASS="roomPic">
@@ -106,95 +96,114 @@
                         </DIV>
 
                         <!--- CHECKOUT FORM --->
-                        <FORM ID="checkoutForm" ACTION="#" METHOD="post">
-                            <FIELDSET>
-                                <LEGEND>Your Information</LEGEND>
+                        <FORM ID="checkoutForm">
+                            <!--- GUEST INFO --->
+                            <FIELDSET CLASS="guestInfo">
+                                <DIV CLASS="formControls">
+                                    <LEGEND><H2 CLASS="sectionTitle">Your Information</H2></LEGEND>
 
+                                    <DIV CLASS="controlsContainer">
+                                        <BUTTON ID="editFormButton">
+                                            Edit
+                                            <SVG CLASS="pencilIcon" XMLNS="http://www.w3.org/2000/svg" VERSION="1.1" VIEWBOX="0 0 1200 1200" FILL="currentColor">
+                                                <G>
+                                                  <G ID="Capa_1">
+                                                    <G>
+                                                      <PATH D="M813,90.3l-80.4,80.4,296,296,80.4-80.4c82.1-82.1,82.1-214,0-296-82-82.1-214-82.1-296,0h0Z"/>
+                                                      <PATH D="M100.5,801.9L709,193.4l295.7,295.7-608.5,608.5L100.5,801.9Z"/>
+                                                      <PATH D="M79.4,828.6l-49.9,323.4c0,4.8,1.6,9.7,4.8,14.5,3.2,3.2,6.4,4.8,11.2,4.8h3.2l323.4-49.9h1.6L79.4,827.1v1.6h0Z"/>
+                                                    </G>
+                                                  </G>
+                                                </G>
+                                            </SVG>
+                                        </BUTTON>    
+                                        <BUTTON ID="saveFormButton" CLASS="btn" STYLE="display:none;">
+                                            Save
+                                        </BUTTON>
+                                    </DIV>
+                                </DIV>                             
+                                
                                 <DIV CLASS="formRow">
                                     <LABEL FOR="firstName">
-                                        <SPAN CLASS="sr-only">First Name</SPAN>
-                                        <INPUT ID="firstName" NAME="firstName" TYPE="text" PLACEHOLDER="First Name">
+                                        <SPAN CLASS="labelText">First Name:</SPAN>
+                                        <INPUT ID="firstName" NAME="firstName" TYPE="text" PLACEHOLDER="First Name" VALUE="Sergio" READONLY>
                                     </LABEL>
     
                                     <LABEL FOR="lastName">
-                                        <SPAN CLASS="sr-only">Last Name</SPAN>
-                                        <INPUT ID="lastName" NAME="lastName" TYPE="text" PLACEHOLDER="Last Name">
+                                        <SPAN CLASS="labelText">Last Name:</SPAN>
+                                        <INPUT ID="lastName" NAME="lastName" TYPE="text" PLACEHOLDER="Last Name" VALUE="Gómez" READONLY>
                                     </LABEL>
     
                                     <LABEL FOR="email">
-                                        <SPAN CLASS="sr-only">Email</SPAN>
-                                        <INPUT ID="email" NAME="email" TYPE="email" PLACEHOLDER="Email">
+                                        <SPAN CLASS="labelText">Email:</SPAN>
+                                        <INPUT ID="email" NAME="email" TYPE="email" PLACEHOLDER="Email" VALUE="123@321.com" READONLY>
                                     </LABEL>
                                 </DIV>
 
                                 <DIV class="formRow">
                                     <LABEL FOR="address">
-                                        <SPAN CLASS="sr-only">Address</SPAN>
-                                        <INPUT ID="address" NAME="address" TYPE="text" PLACEHOLDER="Address">
+                                        <SPAN CLASS="labelText">Address:</SPAN>
+                                        <INPUT ID="address" NAME="address" TYPE="text" PLACEHOLDER="Address" VALUE="address, st. street #16" READONLY>
                                     </LABEL>
                                 </DIV>
 
                                 <DIV class="formRow">
                                     <LABEL FOR="city">
-                                        <SPAN CLASS="sr-only">City</SPAN>
-                                        <INPUT ID="city" NAME="city" TYPE="text" PLACEHOLDER="City">
+                                        <SPAN CLASS="labelText">City:</SPAN>
+                                        <INPUT ID="city" NAME="city" TYPE="text" PLACEHOLDER="City" VALUE="Cancun" READONLY>
                                     </LABEL>
     
                                     <LABEL FOR="state">
-                                        <SPAN CLASS="sr-only">State</SPAN>
+                                        <SPAN CLASS="labelText">State:</SPAN>
                                         <SELECT ID="state" NAME="state">
                                             <OPTION>California</OPTION>
-                                            <OPTION>Nevada</OPTION>
+                                            <OPTION SELECTED>Nevada</OPTION>
                                             <OPTION>Texas</OPTION>
                                             <OPTION>Florida</OPTION>
                                         </SELECT>
                                     </LABEL>
     
                                     <LABEL FOR="zip">
-                                        <SPAN CLASS="sr-only">Zip Code</SPAN>
-                                        <INPUT ID="zip" NAME="zip" TYPE="number" PLACEHOLDER="ZIP">
+                                        <SPAN CLASS="labelText">Zip Code:</SPAN>
+                                        <INPUT ID="zip" NAME="zip" TYPE="number" PLACEHOLDER="ZIP" VALUE="12345" READONLY>
                                     </LABEL>
                                 </DIV>
                                 
                                 <DIV class="formRow">
                                     <LABEL FOR="country">
-                                        <SPAN CLASS="sr-only">Country</SPAN>
+                                        <SPAN CLASS="labelText">Country:</SPAN>
                                         <SELECT ID="country" NAME="country">
                                             <OPTION>USA</OPTION>
-                                            <OPTION>México</OPTION>
+                                            <OPTION SELECTED>México</OPTION>
                                             <OPTION>Canada</OPTION>
                                             <OPTION>China</OPTION>
                                         </SELECT>
                                     </LABEL>
 
                                     <LABEL FOR="phone">
-                                        <SPAN CLASS="sr-only">Phone</SPAN>
-                                        <INPUT ID="phone" NAME="phone" TYPE="number" PLACEHOLDER="Phone">
+                                        <SPAN CLASS="labelText">Phone:</SPAN>
+                                        <INPUT ID="phone" NAME="phone" TYPE="number" VALUE="+10123456789" READONLY>
                                     </LABEL>
                                 </DIV>
                                 
                                 <DIV class="formRow">
                                     <LABEL FOR="comments">
-                                        <SPAN CLASS="sr-only">Special Requests</SPAN>
-                                        <TEXTAREA ID="comments" NAME="comments" ROWS="3" PLACEHOLDER="Special Requests"></TEXTAREA>
+                                        <SPAN CLASS="labelText">Special Requests:</SPAN>
+                                        <TEXTAREA ID="comments" NAME="comments" ROWS="3" PLACEHOLDER="Special Requests" READONLY>Hi!, We are travelling with a one year old baby, so we are going to need a crib if available. Thank you!</TEXTAREA>
                                     </LABEL>
                                 </DIV>
                                 
                             </FIELDSET>
 
-                            <FIELDSET>
-                                <LEGEND>Add-Ons</LEGEND>
-                            </FIELDSET>
-
-                            <INPUT ID="submit" CLASS="btn" TITLE="Please fill up the form in order to continue" TYPE="submit" VALUE="Continue" DISABLED>
+                            <INPUT ID="submit" CLASS="btn" TITLE="Confirm and reserve now" TYPE="submit" VALUE="Reserve">
                         </FORM>
                     </DIV>
                 </SECTION>
             </DIV>
 
-            <!--------------->
-            <!--- SUMMARY --->
-            <!--------------->
+            <!----------------------->
+            <!--- BOOKING SUMMARY --->
+            <!----------------------->
 
             <DIV ID="bookingSummary">
                 <DIV CLASS="sectionTopBar">
@@ -211,9 +220,14 @@
                     </DIV>
                 </SECTION>
 
-                <!--- PRICE DETAILS --->
+                <!--- DETAILS --->
                 <SECTION>
-                    <BUTTON ID="summaryDetailsButton">Details</BUTTON>
+                    <BUTTON ID="summaryDetailsButton">
+                        Details
+                        <SVG CLASS="summaryArrow" WIDTH="15px" HEIGHT="15px" VERSION="1.1" VIEWBOX="0 0 1200 1200" XMLNS="http://www.w3.org/2000/svg">
+                            <PATH d="m269.88 419.11c-8.0625 0.070312-15.754 3.3867-21.344 9.1953-5.5898 5.8047-8.6094 13.621-8.375 21.68 0.23438 8.0586 3.7031 15.68 9.6211 21.156l329.94 301.88c5.5352 5.0703 12.766 7.8828 20.273 7.8828s14.738-2.8125 20.273-7.8828l329.94-301.88c5.9258-5.4805 9.3906-13.113 9.6211-21.176 0.23047-8.0664-2.7969-15.883-8.4023-21.691-5.6016-5.8047-13.309-9.1094-21.375-9.1641z" fill-rule="evenodd"/>
+                        </SVG>
+                    </BUTTON>
 
                     <DIV CLASS="summaryDetails">
                         <DIV> <!--- Wrapper for height animation --->
@@ -237,7 +251,7 @@
 
                             <DIV CLASS="summaryRow">
                                 <DIV>
-                                    <SPAN>Pet Fee</SPAN> <BUTTON CLASS="deleteThis">X</BUTTON>
+                                    <SPAN>Pet Fee - 2 Pets</SPAN> <BUTTON CLASS="deleteThis">X</BUTTON>
                                 </DIV>
                                 <SPAN>$50.00</SPAN>
                             </DIV>
