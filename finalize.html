@@ -50,7 +50,7 @@
 
                 <!--- Progress Bar --->
                 <DIV CLASS="checkoutProgress sectionTopBar finalize">
-                    <DIV CLASS="step completed">
+                    <DIV CLASS="step completed ">
                         <DIV CLASS="circle"></DIV>
                         <SPAN>Select</SPAN>
                     </DIV>
@@ -155,7 +155,7 @@
     
                                     <LABEL FOR="state">
                                         <SPAN CLASS="labelText">State:</SPAN>
-                                        <SELECT ID="state" NAME="state">
+                                        <SELECT ID="state" NAME="state" CLASS="disabled">
                                             <OPTION>California</OPTION>
                                             <OPTION SELECTED>Nevada</OPTION>
                                             <OPTION>Texas</OPTION>
@@ -172,7 +172,7 @@
                                 <DIV class="formRow">
                                     <LABEL FOR="country">
                                         <SPAN CLASS="labelText">Country:</SPAN>
-                                        <SELECT ID="country" NAME="country">
+                                        <SELECT ID="country" NAME="country" CLASS="disabled">
                                             <OPTION>USA</OPTION>
                                             <OPTION SELECTED>México</OPTION>
                                             <OPTION>Canada</OPTION>
@@ -222,14 +222,14 @@
 
                 <!--- DETAILS --->
                 <SECTION>
-                    <BUTTON ID="summaryDetailsButton">
+                    <BUTTON ID="summaryDetailsButton" CLASS="open">
                         Details
                         <SVG CLASS="summaryArrow" WIDTH="15px" HEIGHT="15px" VERSION="1.1" VIEWBOX="0 0 1200 1200" XMLNS="http://www.w3.org/2000/svg">
                             <PATH d="m269.88 419.11c-8.0625 0.070312-15.754 3.3867-21.344 9.1953-5.5898 5.8047-8.6094 13.621-8.375 21.68 0.23438 8.0586 3.7031 15.68 9.6211 21.156l329.94 301.88c5.5352 5.0703 12.766 7.8828 20.273 7.8828s14.738-2.8125 20.273-7.8828l329.94-301.88c5.9258-5.4805 9.3906-13.113 9.6211-21.176 0.23047-8.0664-2.7969-15.883-8.4023-21.691-5.6016-5.8047-13.309-9.1094-21.375-9.1641z" fill-rule="evenodd"/>
                         </SVG>
                     </BUTTON>
 
-                    <DIV CLASS="summaryDetails">
+                    <DIV CLASS="summaryDetails open">
                         <DIV> <!--- Wrapper for height animation --->
                             <DIV CLASS="summaryRow">
                                 <SPAN>2 king Non-Smoking - Weekly Rate</SPAN>
@@ -259,7 +259,7 @@
                             <SPAN CLASS="summarySeparator"></SPAN>
 
                             <DIV CLASS="summaryRow">
-                                <SPAN>Room rate</SPAN>
+                                <SPAN>Room total</SPAN>
                                 <SPAN>$1000.50</SPAN>
                             </DIV>
 

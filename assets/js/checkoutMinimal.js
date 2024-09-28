@@ -51,6 +51,7 @@ jQuery(window).load( function() {
     jQuery('#editFormButton').click( function(event) {
         event.preventDefault();
         jQuery("#checkoutForm .guestInfo :input").prop("readonly", false);
+        jQuery("#checkoutForm .guestInfo select").removeClass('disabled'); /* for SELECT html tags */
         jQuery('#saveFormButton').show();
         jQuery(this).hide();
     })
@@ -58,6 +59,7 @@ jQuery(window).load( function() {
     jQuery('#saveFormButton').click( function(event) {
         event.preventDefault();
         jQuery("#checkoutForm .guestInfo :input:not(#editFormButton)").prop("readonly", true);
+        jQuery("#checkoutForm .guestInfo select").addClass('disabled');
         jQuery('#editFormButton').show();
         jQuery(this).hide();
     })

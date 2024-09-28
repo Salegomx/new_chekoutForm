@@ -115,6 +115,9 @@
                     background-color: $clr-white;
                     outline: 1px solid var(--clr-primary);
                     border-radius: $round;
+                    @media (width <= 22rem) {
+                        display: none;
+                    }
                 }
                 &.completed .circle {
                     color: $clr-white;
@@ -308,17 +311,21 @@
                 color: $clr-black;
             }
             :is(input, select, textarea) {
+                float: none;
                 font-family: $font;
                 font-size: $fs-16;
                 font-weight: normal;
                 color: $clr-gray-dark;
                 border: none;
-                &:read-only:not(select) {
+                &:read-only:not(select),
+                &.disabled /* for SELECT html tags */ {
                     background: none !important;
                     outline: none !important;
                     padding-inline: 0 !important;
                     border-radius: 0 !important;
                     resize: none !important;
+                    pointer-events: none !important;
+                    color: $clr-gray-regular !important;
                 }
             }
             /* Chrome, Safari, Edge, Opera */
