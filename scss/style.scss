@@ -6,6 +6,11 @@
 @import './abstract/fonts/inter';
 
 #checkoutMinimal {
+    main {
+        width: min(900px, 100%);
+        margin-inline: auto;
+    }
+
     /* Enforce our styles over third party stuff */
     font-family: $font !important;
     color: $clr-black !important;
@@ -78,6 +83,9 @@
     .checkoutMainContainer {
         @extend %container;
         padding-block: 1rem;
+        display: grid;
+        grid-template-columns: 1fr minmax(300px, 35%);
+        gap: calc($formGap / 2);
 
         /* Progress bar */
         .checkoutProgress {
@@ -166,7 +174,7 @@
         }
         .roomInfoContainer {
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: 35% 1fr;
             margin-bottom: 20px;
             outline: 1pt solid $clr-gray-light;
             border-radius: $border-radius-regular;
@@ -177,9 +185,9 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: baseline;
+                    flex-wrap: wrap;
+                    gap: calc($formGap / 2);
                     margin-bottom: 15px;
-                    word-wrap: none;
-                    word-break: keep-all;
                     .roomInfoName {
                         font-size: $fs-22;
                     }
@@ -189,12 +197,13 @@
                     }
                 }
                 .roomInfoDescription {
-                    max-height: 110px;
+                    max-height: 80px;
                     font-size: $fs-14;
                     color: $clr-gray-dark;
                     line-height: 1.25;
                     scrollbar-width: thin;
                     overflow: hidden;
+                    display: none;
                 }
             }
             .roomPic {
@@ -223,12 +232,6 @@
     }
 
     #bookingSummary {
-        @extend %container;
-        position: fixed;
-        max-width: 95%;
-        left: 2.5%;
-        right: 2.5%;
-        bottom: 15px;
         background: white;
         section {
             .stayDates {
@@ -245,6 +248,10 @@
                         color: inherit;
                         text-decoration: underline;
                     }
+                }
+                &.stayOcc {
+                    flex-wrap: wrap;
+                    gap: calc($formGap / 2)
                 }
             }
             .summaryRow {
@@ -514,11 +521,6 @@
 
     /* Desktop specific styles */
     @media (width >= $desktop) {
-        .checkoutMainContainer {
-            display: grid;
-            grid-template-columns: 1fr minmax(320px, 30%);
-            gap: 1rem
-        }
         #bookingSummary {
             position: sticky;
             top: 1rem;
